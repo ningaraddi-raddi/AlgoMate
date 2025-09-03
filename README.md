@@ -29,11 +29,16 @@ This project is designed to help students, educators, and developers **understan
 
 ## 📸 Screenshots  
 <img width="1919" height="1041" alt="image" src="https://github.com/user-attachments/assets/9a0b2746-9618-403a-ac7c-fe01eb0617b2" />
+<br><br>
 
 <img width="1919" height="1055" alt="image" src="https://github.com/user-attachments/assets/46e922af-7096-4a54-a7c4-c8b3cfa862b9" />
+<br><br>
 <img width="1915" height="968" alt="image" src="https://github.com/user-attachments/assets/f8578260-698c-41f8-b272-322797724e4d" />
+<br><br>
 <img width="1919" height="997" alt="image" src="https://github.com/user-attachments/assets/0f1597b6-4794-4308-935e-98e2a2f7d684" />
+<br><br>
 <img width="1919" height="1028" alt="image" src="https://github.com/user-attachments/assets/75e7f68e-5c30-43d1-ab40-c7401e602279" />
+<br><br>
 <img width="1919" height="1030" alt="image" src="https://github.com/user-attachments/assets/6b7348b4-16d6-4056-aace-77654c72c20c" />
 
 
