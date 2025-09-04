@@ -120,7 +120,7 @@ const transformBackendResponse = (backendData) => {
 
 // --- Main Component ---
 export default function RecursionVisualizer() {
-    const [error, setError] = useState(null);
+    const [, setError] = useState(null);
   const [code, setCode] = useState(sampleCodes.factorial);
   const [functionName, setFunctionName] = useState('factorial');
   const [testInput, setTestInput] = useState('4');
