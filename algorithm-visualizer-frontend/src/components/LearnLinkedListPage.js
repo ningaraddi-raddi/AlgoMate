@@ -7,7 +7,7 @@ const doublyImg = "https://upload.wikimedia.org/wikipedia/commons/f/fd/Doubly-li
 const circularImg = "https://upload.wikimedia.org/wikipedia/commons/2/2c/Circularly_linked_list.svg";
 
 const LearnLinkedListPage = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, ] = useState(true);
 
   const themeClasses = {
     bg: isDarkMode ? 'bg-gray-950' : 'bg-white',
