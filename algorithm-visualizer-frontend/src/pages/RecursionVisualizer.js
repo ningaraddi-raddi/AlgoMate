@@ -157,7 +157,7 @@ export default function RecursionVisualizer() {
   const handleRunCode = async () => {
     setIsLoading(true); setError(null); setVisualization(null); setCurrentStep(0); setIsPlaying(false);
     try {
-      const response = await axios.post('https://algomate-p45p.onrender.com', {
+      const response = await axios.post('https://algomate-p45p.onrender.com/api/code/run', {
         userCode: code,
         functionName,
         testInput: parseInt(testInput, 10)
