@@ -279,7 +279,7 @@ const TraversalVisualizer = () => {
       }
       
       const lastNodeX = startX + (nodeCount - 1) * (scaledNodeWidth + scaledSpacing);
-      const nextPointerX = lastNodeX + scaledNodeWidth * 0.8;
+      //const nextPointerX = lastNodeX + scaledNodeWidth * 0.8;
       
       if (nodeCount > 0) {
         ctx.strokeStyle = '#9CA3AF';
