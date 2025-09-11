@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react'
 
 import { Play, Pause, SkipForward, SkipBack, RotateCcw, Zap, ZoomIn, ZoomOut, Trash2, Home, LocateFixed, GitCommitHorizontal, Eraser } from 'lucide-react';
-import Editor from 'https://esm.sh/@monaco-editor/react';
+import Editor from '@monaco-editor/react';
+
 
 // --- C++ Code Snippets for Different Deletion Operations ---
 const cppCode = {
