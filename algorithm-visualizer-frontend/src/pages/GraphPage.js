@@ -8,10 +8,10 @@ import { Routes, Route } from 'react-router-dom';
 import LearnLinkedListPage from '../components/LearnLinkedListPage';
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'; // Import icons
 
-import GraphDfsVisualizer from '../components/Graph_Operations/GraphDfsVisualizer';
+
 import GraphBfsVisualizer from '../components/Graph_Operations/GraphBfsVisualizer';
 import Sidebar from '../components/Graph_Operations/graphSidebar'; 
-
+import GraphDfsVisualizer from '../components/Graph_Operations/GraphDfsVisualizer';
 
 const GraphPage = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
