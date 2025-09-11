@@ -1,13 +1,12 @@
 
 
 
-// src/pages/LinkedListPage.js
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Sidebar from '../components/arrayOperations/arraySidebar';
-import ArrayInsertionBeginning from '../components/arrayOperations/arrayInsertionBeginning';
-import ArrayInsertionEnd from '../components/arrayOperations/arrayInsertionEnd';
-import ArrayInsertionPosition from '../components/arrayOperations/arrayInsertionPosition';
+import ArrayInsertionBeginning from '../components/arrayOperations/arrayinsertionBeginning';
+import ArrayInsertionEnd from '../components/arrayOperations/arrayinsertionEnd';
+import ArrayInsertionPosition from '../components/arrayOperations/arrayinsertionPosition';
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'; // Import icons
 
 import LearnArray from '../components/learnArray';
@@ -44,7 +43,7 @@ const SortingPage = () => {
                 {/* The animation and learn pages are rendered here */}
                 <Routes>
                     <Route path="/" element={<LearnArray />} />
-                    <Route path="animate/insertion/beginning" element={<ArrayinsertionBeginning />} />
+                    <Route path="animate/insertion/beginning" element={<ArrayInsertionBeginning />} />
                     <Route path="animate/insertion/end" element={<ArrayInsertionEnd />} />
                     {/* the route insertion at end contains insertion of element at beginning ,end,at position in vector */}
                     <Route path="animate/insertion/position" element={<ArrayInsertionPosition />} />
