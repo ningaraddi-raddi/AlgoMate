@@ -44,7 +44,7 @@ const SortingPage = () => {
                 {/* The animation and learn pages are rendered here */}
                 <Routes>
                     <Route path="/" element={<LearnArray />} />
-                    <Route path="animate/insertion/beginning" element={<ArrayInsertionBeginning />} />
+                    <Route path="animate/insertion/beginning" element={<ArrayinsertionBeginning />} />
                     <Route path="animate/insertion/end" element={<ArrayInsertionEnd />} />
                     {/* the route insertion at end contains insertion of element at beginning ,end,at position in vector */}
                     <Route path="animate/insertion/position" element={<ArrayInsertionPosition />} />
