@@ -4,9 +4,9 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Sidebar from '../components/arrayOperations/arraySidebar';
-import ArrayInsertionBeginning from '../components/arrayOperations/arrayinsertionBeginning';
-import ArrayInsertionEnd from '../components/arrayOperations/arrayinsertionEnd';
-import ArrayInsertionPosition from '../components/arrayOperations/arrayinsertionPosition';
+import ArrayInsertionBeginning from '../components/arrayOperations/arrayInsertionBeginning';
+import ArrayInsertionEnd from '../components/arrayOperations/arrayInsertionEnd';
+import ArrayInsertionPosition from '../components/arrayOperations/arrayInsertionPosition';
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'; // Import icons
 
 import LearnArray from '../components/learnArray';
