@@ -21,7 +21,7 @@ function App() {
         <Route path="/array/*" element={<ArrayPage />} />
         
         <Route path="/binary-tree" element={<BinaryTreePage />} />
-        <Route path="/graphs" element={<GraphPage />} />
+        <Route path="/graphs/*" element={<GraphPage />} />
         <Route path="/learn-linked-list" element={<LearnLinkedListPage />} />
         
 
