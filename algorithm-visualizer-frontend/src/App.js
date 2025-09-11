@@ -18,7 +18,7 @@ function App() {
         
         <Route path="/sorting" element={<SortingPage />} />
         <Route path="/linked-list/*" element={<LinkedListPage />} />
-        <Route path="/array" element={<ArrayPage />} />
+        <Route path="/array/*" element={<ArrayPage />} />
         
         <Route path="/binary-tree" element={<BinaryTreePage />} />
         <Route path="/graphs" element={<GraphPage />} />
