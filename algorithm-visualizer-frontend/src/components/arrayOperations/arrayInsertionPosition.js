@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Play, Pause, SkipForward, SkipBack, RotateCcw, Zap, ZoomIn, ZoomOut, Search, ChevronsRight, Binary } from 'lucide-react';
-import Editor from 'https://esm.sh/@monaco-editor/react';
+import Editor from '@monaco-editor/react';
+
 import ArrayInsertionBeginning from './arrayInsertionBeginning';
 
 // --- C++ Code Snippets for Different Search Operations ---
