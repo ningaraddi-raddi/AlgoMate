@@ -4,13 +4,10 @@
 // src/pages/LinkedListPage.js
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-
+import Sidebar from '../components/Graph_Operations/graphSidebar'; // Adjust the import path if needed
 import LearnLinkedListPage from '../components/LearnLinkedListPage';
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'; // Import icons
-
-
 import GraphBfsVisualizer from '../components/Graph_Operations/GraphBfsVisualizer';
-import Sidebar from '../components/Graph_Operations/graphSidebar'; 
 import GraphDfsVisualizer from '../components/Graph_Operations/GraphDfsVisualizer';
 
 const GraphPage = () => {
