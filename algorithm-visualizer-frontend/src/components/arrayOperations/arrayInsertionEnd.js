@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react'
 import { Play, Pause, SkipForward, SkipBack, RotateCcw, Zap, ZoomIn, ZoomOut, SquarePlus, Home, LocateFixed } from 'lucide-react';
-import Editor from 'https://esm.sh/@monaco-editor/react';
+import Editor from '@monaco-editor/react';
+
 
 // --- C++ Code Snippets for Different Operations ---
 const cppCode = {
