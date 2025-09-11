@@ -1,6 +1,4 @@
 
-
-
 // src/pages/LinkedListPage.js
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
@@ -9,10 +7,15 @@ import ArrayInsertionBeginning from '../components/arrayOperations/arrayInsertio
 import ArrayInsertionEnd from '../components/arrayOperations/arrayInsertionEnd';
 import ArrayInsertionPosition from '../components/arrayOperations/arrayInsertionPosition';
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'; // Import icons
-
+import TwoPointerSumVisualizer from '../components/arrayOperations/TwoPointerSumVisualizer';
 import LearnArray from '../components/learnArray';
 import ArrayDeletionVisualizer from '../components/arrayOperations/ArrayDeletionVisualizer';
-
+import ArrayReversalVisualizer from '../components/arrayOperations/ArrayReversalVisualizer';
+import RemoveDuplicatesVisualizer from '../components/arrayOperations/RemoveDuplicatesVisualizer';
+import SlidingWindowMaxSumVisualizer from '../components/arrayOperations/SlidingWindowMaxSumVisualizer';
+import LongestSubstringVisualizer from '../components/arrayOperations/LongestSubstringVisualizer';
+import CircularArrayLoopVisualizer from '../components/arrayOperations/CircularArrayLoopVisualizer';
+import ArrayRotateVisualizer from '../components/arrayOperations/ArrayRotateVisualizer';
 const SortingPage = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
@@ -50,6 +53,16 @@ const SortingPage = () => {
                     <Route path="animate/insertion/position" element={<ArrayInsertionPosition />} />
                     {/*insertion at position route contains the linear search and the binary search */}
                     <Route path="animate/deletion/vector" element={<ArrayDeletionVisualizer />} />
+                    <Route path="animate/twopointer/sum" element={<TwoPointerSumVisualizer />} />
+                    <Route path='animate/twopointer/reverse' element={<ArrayReversalVisualizer/>}/>
+                    <Route path='animate/fast&slow/duplicates' element={<RemoveDuplicatesVisualizer/>}/>
+                    <Route path='animate/slidingwindow/max_sum_subarray' element={<SlidingWindowMaxSumVisualizer/>}/>
+                    <Route path='animate/slidingwindow/variable_size_window' element={<LongestSubstringVisualizer/>}/>
+                    <Route path='animate/fast&slow/circulararray' element={<CircularArrayLoopVisualizer/>}/>
+                    <Route path='animate/cyclic/rotate_array_by_ksteps' element={<ArrayRotateVisualizer/>}/>
+
+
+
                 </Routes>
             </div>
         </div>
