@@ -4,7 +4,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { loginUser, saveToken } from '../services/authService';
+import { loginUser} from '../services/authService';
 
 export default function Login() {
   const [email, setEmail] = useState('');
