@@ -123,11 +123,7 @@ app.use(cors({
 }));
 
 
-res.cookie("token", token, {
-  httpOnly: true,
-  secure: true,        // Render enforces HTTPS
-  sameSite: "Lax",     // Same-site since frontend & backend are on same domain / subdomains
-});
+
 
 
 
