@@ -8,7 +8,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { registerUser, saveToken } from '../services/authService';
+import { registerUser} from '../services/authService';
 
 export default function Register() {
   const [name, setName] = useState('');
