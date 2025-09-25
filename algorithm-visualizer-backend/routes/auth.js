@@ -92,8 +92,29 @@
 
 
 
+// routes/auth.js
+const express = require('express');
+const router = express.Router();
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const passport = require('passport');
 
-/* REGISTER */
+const User = require('../models/User');
+const authMiddleware = require('../middleware/auth');
+
+const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:3000';
+
+/* ===== Helper to set JWT cookie ===== */
+const setTokenCookie = (res, token) => {
+  res.cookie('token', token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production', // HTTPS only in prod
+    maxAge: 3600000, // 1 hour
+    sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax'
+  });
+};
+
+/* ===== REGISTER ===== */
 router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
   if (!email || !password) return res.status(400).json({ message: 'Email and password required' });
@@ -108,15 +129,13 @@ router.post('/register', async (req, res) => {
     user = new User({ name, email, password: hashed, provider: 'local' });
     await user.save();
 
-    const token = jwt.sign({ id: user._id, email: user.email, name: user.name }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    const token = jwt.sign(
+      { id: user._id, email: user.email, name: user.name },
+      process.env.JWT_SECRET,
+      { expiresIn: '1h' }
+    );
 
-    // ✅ Set cookie
-    res.cookie('token', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production', // HTTPS only in prod
-      maxAge: 3600000, // 1 hour
-      sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax'
-    });
+    setTokenCookie(res, token);
 
     return res.json({ message: 'Registration successful' });
   } catch (err) {
@@ -125,7 +144,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-/* LOGIN */
+/* ===== LOGIN ===== */
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) return res.status(400).json({ message: 'Email and password required' });
@@ -137,15 +156,13 @@ router.post('/login', async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ message: 'Invalid credentials' });
 
-    const token = jwt.sign({ id: user._id, email: user.email, name: user.name }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    const token = jwt.sign(
+      { id: user._id, email: user.email, name: user.name },
+      process.env.JWT_SECRET,
+      { expiresIn: '1h' }
+    );
 
-    // ✅ Set cookie
-    res.cookie('token', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      maxAge: 3600000,
-      sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax'
-    });
+    setTokenCookie(res, token);
 
     return res.json({ message: 'Login successful' });
   } catch (err) {
@@ -154,3 +171,41 @@ router.post('/login', async (req, res) => {
   }
 });
 
+/* ===== GET CURRENT USER (PROTECTED) ===== */
+router.get('/me', authMiddleware, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select('-password -__v');
+    return res.json({ user });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ message: 'Server error' });
+  }
+});
+
+/* ===== GOOGLE OAUTH ===== */
+router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+router.get(
+  '/google/callback',
+  passport.authenticate('google', { session: false, failureRedirect: `${CLIENT_URL}/login` }),
+  (req, res) => {
+    const user = req.user;
+    const token = jwt.sign(
+      { id: user._id, email: user.email, name: user.name },
+      process.env.JWT_SECRET,
+      { expiresIn: '1h' }
+    );
+
+    // ✅ Set cookie for Google OAuth login
+    res.cookie('token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      maxAge: 3600000,
+      sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax'
+    });
+
+    return res.redirect(`${CLIENT_URL}/home`);
+  }
+);
+
+module.exports = router;
