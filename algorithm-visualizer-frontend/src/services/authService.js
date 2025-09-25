@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API = process.env.REACT_APP_API_URL || 'http://localhost:5000/auth';
+const API ='https://algomate-p45p.onrender.com';
 
 export const registerUser = (payload) => axios.post(`${API}/register`, payload).then(r => r.data);
 export const loginUser = (payload) => axios.post(`${API}/login`, payload).then(r => r.data);
