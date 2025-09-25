@@ -11,15 +11,12 @@
 // export const removeToken = () => localStorage.removeItem('token');
 
 
-import axios from 'axios';
-
-const API = process.env.REACT_APP_API_URL || 'https://your-backend.onrender.com/auth';
 
 const axiosInstance = axios.create({
-  baseURL: API,
-  withCredentials: true, // ✅ needed if different subdomains
+  baseURL: process.env.REACT_APP_API_URL || 'https://your-backend.onrender.com/auth',
+  withCredentials: true, // ✅ important to send cookie automatically
 });
 
 export const registerUser = (payload) => axiosInstance.post("/register", payload).then(r => r.data);
 export const loginUser = (payload) => axiosInstance.post("/login", payload).then(r => r.data);
-export const getMe = () => axiosInstance.get("/me").then(r => r.data); // cookie is sent automatically
+export const getMe = () => axiosInstance.get("/me").then(r => r.data);
