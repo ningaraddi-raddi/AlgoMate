@@ -16,8 +16,8 @@ export default function Login() {
     e.preventDefault();
     setErrorMessage(''); // Clear previous errors
     try {
-      const { token } = await loginUser({ email, password });
-      saveToken(token);
+       await loginUser({ email, password });
+      
       navigate('/home');
     } catch (err) {
       setErrorMessage(err?.response?.data?.message || 'Login failed. Please check your credentials.');
