@@ -21,8 +21,8 @@ export default function Register() {
     e.preventDefault();
     setErrorMessage(''); // Clear previous errors
     try {
-      const { token } = await registerUser({ name, email, password });
-      saveToken(token);
+       await registerUser({ name, email, password });
+      
       navigate('/home');
     } catch (err) {
       setErrorMessage(err?.response?.data?.message || 'Registration failed. Please try again.');
