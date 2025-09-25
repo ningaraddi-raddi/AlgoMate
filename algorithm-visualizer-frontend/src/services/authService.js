@@ -12,11 +12,21 @@
 
 
 
+
+
+
+// services/authService.js
+import axios from 'axios';
+
+const API = process.env.REACT_APP_API_URL || 'https://your-backend.onrender.com/auth';
+
+// Axios instance with cookies
 const axiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'https://your-backend.onrender.com/auth',
-  withCredentials: true, // ✅ important to send cookie automatically
+  baseURL: API,
+  withCredentials: true, // ✅ send JWT cookie automatically
 });
 
-export const registerUser = (payload) => axiosInstance.post("/register", payload).then(r => r.data);
-export const loginUser = (payload) => axiosInstance.post("/login", payload).then(r => r.data);
-export const getMe = () => axiosInstance.get("/me").then(r => r.data);
+// Auth API
+export const registerUser = (payload) => axiosInstance.post('/register', payload).then(r => r.data);
+export const loginUser = (payload) => axiosInstance.post('/login', payload).then(r => r.data);
+export const getMe = () => axiosInstance.get('/me').then(r => r.data);
