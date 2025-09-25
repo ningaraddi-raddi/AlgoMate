@@ -4,7 +4,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { loginUser} from '../services/authService';
+import { loginUser,saveToken} from '../services/authService';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -16,7 +16,8 @@ export default function Login() {
     e.preventDefault();
     setErrorMessage(''); // Clear previous errors
     try {
-       await loginUser({ email, password });
+       const {token}=await loginUser({ email, password });
+      saveToken(token);
       
       navigate('/home');
     } catch (err) {
