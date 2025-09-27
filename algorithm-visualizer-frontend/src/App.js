@@ -9,10 +9,12 @@
 // import BinaryTreePage from "./pages/BinaryTreePage";
 // import GraphPage from "./pages/GraphPage";
 // import LearnLinkedListPage from "../src/components/LearnLinkedListPage"
+// import OAuth2RedirectHandler from './components/OAuth2RedirectHandler';
 // function App() {
 //   return (
 //     <Router>
 //       <Routes>
+//         <Route path="/oauth2/redirect" element={<OAuth2RedirectHandler />} />
 //         <Route path="/" element={<Home />} />
 //         <Route path="/visualizer/recursion" element={<RecursionVisualizer />} />
         
@@ -37,13 +39,6 @@
 
 
 
-
-
-
-
-
-
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
@@ -60,6 +55,7 @@ import LearnLinkedListPage from "../src/components/LearnLinkedListPage";
 import OAuth2RedirectHandler from './components/OAuth2RedirectHandler';
 
 import PrivateRoute from './components/PrivateRoute';
+import MapPage from './pages/MapPage';
 
 function App() {
   return (
@@ -111,6 +107,14 @@ function App() {
           element={
             <PrivateRoute>
               <ArrayPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/maps"
+          element={
+            <PrivateRoute>
+              <MapPage />
             </PrivateRoute>
           }
         />
