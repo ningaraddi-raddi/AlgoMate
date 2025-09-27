@@ -91,7 +91,7 @@ function App() {
           }
         />
         <Route
-          path="/sorting"
+          path="/sorting/*"
           element={
             <PrivateRoute>
               <SortingPage />
