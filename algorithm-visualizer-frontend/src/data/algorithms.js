@@ -1,4 +1,7 @@
 // src/data/algorithms.js
+import image1 from '../assets/maps.png'
+
+
  const algorithmsData = [
   {
     id: "sorting",
@@ -33,8 +36,8 @@
     description: "Visualize traversals like Inorder, Preorder, Postorder.",
     route: "/binary-tree",
     icon: "🌳",
-    image: "https://via.placeholder.com/400x200/FF33DA/FFFFFF?text=Binary+Tree+Visualizer", // Placeholder image for Binary Tree
-    bgColor: "from-pink-500 to-purple-500"
+    image: "https://visualgo.net/img/gif/graphds.gif", // Placeholder image for Binary Tree
+    bgColor: "from-white-500 to-black-500"
   },
   {
     id: "graphs",
@@ -53,7 +56,16 @@
   icon: "🔁", // A good emoji for recursion
   image: "https://visualgo.net/img/gif/recursion.gif",
   bgColor: "from-purple-600 to-indigo-800"
-}
+},
+{
+  id: "Maps ",
+  title: "(HashMap / TreeMap)",
+  description: "Roadmap for DSA",
+  route: "/maps",
+  icon: "🔁", // A good emoji for recursion
+  image: {image1},
+  bgColor: "from-purple-600 to-indigo-800"
+},
 
 ];
 
