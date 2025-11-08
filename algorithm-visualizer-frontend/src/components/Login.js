@@ -279,6 +279,13 @@ export default function Login() {
               >
                 Log In
               </button>
+            <p
+    className={`text-center text-sm mt-3 italic transition-colors duration-500 ${
+      isDarkTheme ? 'text-gray-400' : 'text-gray-600'
+    }`}
+  >
+    Due to secure password hashing and database verification, the login process may take a few seconds. Please wait...
+  </p>
             </form>
 
             <p className={`mt-8 text-center text-sm transition-colors duration-500 ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>
